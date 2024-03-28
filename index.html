@@ -2,10 +2,49 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Car Enthusiasts</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
+    <header>
+        <div class="container">
+            <h1>Car Enthusiasts</h1>
+            <nav>
+                <ul>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="register.html">Register</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="intro">
+            <div class="container">
+                <h2>Welcome to Car Enthusiasts</h2>
+                <p>Share and discover the best modifications for your car.</p>
+            </div>
+        </section>
+        <section class="share-mods">
+            <div class="container">
+                <h2>Share Your Mods!</h2>
+                <form id="post-form">
+                    <div>
+                        <label for="car-model">Car Model:</label>
+                        <input type="text" id="car-model" name="car-model" required>
+                    </div>
+                    <div>
+                        <label for="modification">Modifications:</label>
+                        <textarea id="modification" name="modification" required></textarea>
+                    </div>
+                    <button type="submit">Post</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Car Enthusiasts Community</p>
+        </div>
+    </footer>
 </body>
 </html>
