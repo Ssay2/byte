@@ -3,11 +3,34 @@ const bodyParser = require('body-parser');
 const fs = require('fs');
 const path = require('path');
 
+const session = require('express-session');
+const sequelize = require('./config/connection');
+
+const exphbs = require('express-handlebars');
+
+const routes = require('./controllers/Index');
+
+
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3001;
 const usersFilePath = path.join(__dirname, 'users.json');
+const hbs = exphbs.create({  });
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
+
+const sess = {
+  secret: 'Super secret secret',
+  resave: false,
+  saveUninitialized: true,
+};
+
+ app.use(session(sess));
 
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.post('/register', (req, res) => {
     const { username, email, password } = req.body;
@@ -40,4 +63,11 @@ app.post('/login', (req, res) => {
     res.send('Login successful.');
 });
 
-app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+app.use(routes);
+
+
+sequelize.sync({ force: false }).then(() => {
+    app.listen(PORT, () => console.log('Now listening'));
+  });
+
+
