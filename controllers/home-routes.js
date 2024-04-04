@@ -1,9 +1,24 @@
+// const { Post, User} = require('../models');
+
 const router = require('express').Router();
-// const { Post, User } = require('../models')
+const { Post, User } = require('../models/Index')
 
 router.get('/', async (req, res) => {
     try {
-      res.render('login', {
+      const postData = await Post.findAll({
+        include: [
+          {
+            model: User,
+            attributes: ['name'],
+          },
+        ],
+      });
+
+      const posts = postData.map((post) => post.get({ plain: true }));
+
+
+      res.render('homepage', {
+        posts,
         loggedIn: req.session.loggedIn
       });
     } catch (err) {

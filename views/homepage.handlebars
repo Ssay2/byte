@@ -1,22 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Car Enthusiasts</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <header>
+<!-- Loop over each object in the posts array -->
         <div class="container">
             <h1>Car Enthusiasts</h1>
             <nav>
-                <ul>
-                    <li><a href="login.html">Login</a></li>
-                    <li><a href="register.html">Register</a></li>
-                </ul>
+            
             </nav>
         </div>
-    </header>
     <main>
         <section class="intro">
             <div class="container">
@@ -40,12 +28,9 @@
                 </form>
             </div>
         </section>
-    </main>
-    <footer>
         <div class="container">
             <p>&copy; 2024 Car Enthusiasts Community</p>
         </div>
-    </footer>
+{{#each posts as |post| }}
 
-</body>
-</html>
+        {{/each}}
