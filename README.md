@@ -37,6 +37,9 @@ Positive Engagement: High user engagement and utilization of the login and regis
 ![Screenshot first page]()
 ![Screenshot second page]()
 
+![Screenshot 2024-04-04 200549](https://github.com/Ssay2/byte/assets/152234164/62250cc0-96cb-4435-8868-28832ca36a49)
+![Screenshot 2024-04-04 200434](https://github.com/Ssay2/byte/assets/152234164/9b0ee679-6b60-47ec-a829-43ebda3e0488)
+![Screenshot 2024-04-04 200528](https://github.com/Ssay2/byte/assets/152234164/cb6a0563-22ec-43f3-b19e-5f06bb937d17)
 
 
 
